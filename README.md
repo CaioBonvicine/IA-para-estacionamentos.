@@ -1,27 +1,40 @@
-Este é um Código para o uso de uma inteligencia artificial para detecção de vagas em um estacionamento.
+# Detector de Vagas de Estacionamento
 
-Em src/detector_vagas/main.py, escreva no local indicado o caminho para a imagem que deseja ser analisada.
+Este projeto é um sistema de **detecção de vagas de estacionamento** utilizando o modelo YOLO da biblioteca `ultralytics`. Ele analisa imagens e retorna o total de vagas detectadas, assim como a quantidade de vagas livres e ocupadas.
 
-Então, abra um terminal na raiz do projeto (na pasta detector_vagas/, onde ficam pyproject.toml, poetry.lock, README.md, etc.) e a partir dai use os comandos "poetry install" e logo em seguida "poetry run detector_vagas".
+---
 
-Com isso a IA irá analisar a imagem, entregando suas informações e gerando uma nova imagem com as identificações feitas.
+## Funcionalidades
 
-(Lembre-se que para poetry funcionar ele precisa estar instalado em sua máquina, caso não tenha poetry, deverá ir em src/detector_vagas/main.py e executar python main.py, mas nesse caso terá que garantir manualmente que as dependências já estão instaladas.)
+- Detecta vagas livres e ocupadas em imagens de estacionamento.
+- Calcula a porcentagem de vagas livres e ocupadas.
+- Pode ser facilmente testado com **Pytest** utilizando mocks para o modelo YOLO.
 
-Esse código foi feito usando uma inteligencia artificial para detectar vagas livres e ocupadas em um estacionamento.
+---
 
-Códigos Poetry que foram usados:
-poetry new detector_vagas
-poetry add ultralystics opencv-python
+## Tecnologias Utilizadas
 
-Logo em seguida no arquivo "pyproject.toml" foi escrito no final do mesmo:
-[tool.poetry.scripts]
-detector_vagas = "detector_vagas.main:main"
+- Python 3.11+
+- [Ultralytics YOLO] para detecção de objetos
+- [Pytest] para testes unitários
+- [Poetry] para gerenciamento de dependências
 
-Depois seguido pelos códigos:
-poetry install
-poetry run detector_vagas
+---
 
-Agora, novamente no terminal foi escrito "poetry build"
+## Etapas para Rodar
 
-isso gerou os arquivos na pasta "dist" que podem ser baixados usando o comando "pip install NomeDoArquivo"
+1. Clone o repositório e rode:
+
+    -poetry install
+    -Configure o caminho da imagem e do modelo YOLO no main.py.
+    -poetry run python main.py
+    -poetry run pytest (para testes).
+
+
+    Exemplo de saída:
+
+    Resultado da análise:
+    Total de vagas detectadas: 5
+    Vagas livres: 3 (60.0%)
+    Vagas ocupadas: 2 (40.0%)
+
