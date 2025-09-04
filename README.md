@@ -23,18 +23,17 @@ Este projeto é um sistema de **detecção de vagas de estacionamento** utilizan
 
 ## Etapas para Rodar
 
-1. Clone o repositório e rode:
+Clone o repositório e execute os seguintes passos:
 
-    -poetry install
-    -Configure o caminho da imagem e do modelo YOLO no main.py.
-    -poetry run python main.py
-    -poetry run pytest (para testes).
+```bash
+# Instalar as dependências
+poetry install
 
+# Configurar o caminho da imagem e do modelo YOLO no arquivo main.py
 
-    Exemplo de saída:
+# Rodar o programa
+poetry run python main.py
 
-    Resultado da análise:
-    Total de vagas detectadas: 5
-    Vagas livres: 3 (60.0%)
-    Vagas ocupadas: 2 (40.0%)
+# Executar os testes
+poetry run pytest
 
